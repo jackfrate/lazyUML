@@ -1,0 +1,99 @@
+
+Fields and methods for AddPartyView
+
+--fields--
+
+- maxSize : int
+- win : JFrame
+- addPatron : JButton
+- newPatron : JButton
+- remPatron : JButton
+- finished : JButton
+- partyList : JList
+- allBowlers : JList
+- party : Vector
+- bowlerdb : Vector
+- lock : Integer
+- controlDesk : ControlDeskView
+- selectedNick : String
+- selectedMember : String
+
+--methods--
+
++ actionPerformed(ActionEvent e)   : void
++ valueChanged(ListSelectionEvent e)   : void
++ getNames()   : Vector
++ updateNewPatron(NewPatronView newPatron)   : void
++ getParty()   : Vector
+
+============================
+
+Fields and methods for Alley
+
+--fields--
+
++ controldesk : ControlDesk
+
+--methods--
+
++ getControlDesk()   : ControlDesk
+
+============================
+
+Fields and methods for Bowler
+
+--fields--
+
+- fullName : String
+- nickName : String
+- email : String
+
+--methods--
+
++ getNickName()   : String
++ getFullName ( )   : String
++ getNick ( )   : String
++ getEmail ( )   : String
++ equals ( Bowler b)   : boolean
+
+============================
+
+Fields and methods for BowlerFile
+
+--fields--
+
+- Stringstatic
+- BOWLER_DATstatic
+- =static
+- "BOWLERS.DAT" : static
+
+--methods--
+
++ Bowler getBowlerInfo(String nickName)  : static
++ Vector getBowlers()  : static
+
+============================
+
+Fields and methods for ControlDesk
+
+--fields--
+
+- lanes : HashSet
+- partyQueue : Queue
+- numLanes : int
+- subscribers : Vector
+
+--methods--
+
++ run()   : void
+- registerPatron(String nickName)   : Bowler
++ assignLane()   : void
++ viewScores(Lane ln)   : void
++ addPartyQueue(Vector partyNicks)   : void
++ getPartyQueue()   : Vector
++ getNumLanes()   : int
++ subscribe(ControlDeskObserver adding)   : void
++ publish(ControlDeskEvent event)   : void
++ getLanes()   : HashSet
+
+============================
