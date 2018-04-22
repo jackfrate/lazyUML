@@ -5,6 +5,8 @@ just place in your working directory and run!
 Author: Jack Frate
 created on 4/29/18
 
+TODO make the program read a directory
+
 """
 
 import os                       # os module imported here
@@ -18,7 +20,7 @@ output = open("LazyUML_output.txt", "w+")  # creates the output file for UML BUD
 
 
 # reads for the fields in a java file
-def pfile(filename):
+def parsefile(filename):
 
     f = open(filename, "r")             # opens the file to be read
     class_name = filename.replace('.java', '')      # gets the name of the constructor
@@ -146,7 +148,7 @@ def main():
                 print("java file found:\t", file)
                 java_files.append(str(file))
                 counter = counter + 1
-                pfile(file)
+                parsefile(file)
                 # just an exception handle
         except Exception as e:
             print("No files found here!")
